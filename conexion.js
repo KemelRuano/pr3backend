@@ -3,7 +3,6 @@ const express = require('express');
 const cors = require('cors');
 // Configuración de la conexión
 
-const port = process.env.PORT || 8000;
 const config = {
     user: 'pr3admin',
     password: 'Server123',
@@ -15,6 +14,7 @@ const config = {
     }
 };
 const app = express();
+app.set('port', process.env.PORT || 8000);
 app.use(cors({
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
@@ -39,6 +39,5 @@ app.post('/Login', (req, res) => {
         });
 });
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto ${port}`);
-})
+app.listen(app.get('port'));
+console.log('Servidor en puerto', app.get('port'));

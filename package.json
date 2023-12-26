@@ -5,5 +5,17 @@
     "mssql": "^10.0.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.5"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "conexion.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./conexion.js",
+    "dev": "nodemon ./conexion.js "
+  },
+  "author": "Kemel Ruano",
+  "license": "ISC",
+  "description": ""
 }
